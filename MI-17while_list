@@ -1,0 +1,16 @@
+#MI-17: Dado un valor M determinar y emitir un listado con los M primeros múltiplos de 3
+# que no lo sean de 5, dentro del conjunto de los números naturales.
+
+M <- as.numeric(readline(prompt = "Ingrese el valor de M: "))
+multiples <- numeric()
+i <- 1
+
+while (length(multiples) < M) {
+  if (i %% 3 == 0 && i %% 5 != 0) {
+    multiples <- append(multiples, i)
+  }
+  i <- i + 1
+}
+
+cat("Los", M, "primeros múltiplos de 3 que no son múltiplos de 5 son: \n")
+cat(multiples, sep = ", ")

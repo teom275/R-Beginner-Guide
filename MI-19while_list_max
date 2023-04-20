@@ -1,0 +1,21 @@
+cat("Dados 10 valores, informar el mayor.\n")
+
+i <- 0
+valores <- c()
+
+while(i < 10) {
+  num <- as.numeric(readline(prompt = "Ingrese un valor: "))
+  
+  # Verificar si el valor ingresado es numérico
+  if (is.na(num)) {
+    cat("Error: el valor ingresado no es válido. Por favor, ingrese un valor numérico.\n")
+    next # Saltar a la siguiente iteración del bucle
+  }
+  
+  i <- i + 1
+  valores <- c(valores, num) # Agregar el valor al vector usando la función c()
+}
+
+mayor <- max(valores) # Calcular el valor máximo
+
+cat("El valor máximo es:", mayor, "\n") # Imprimir el valor máximo
